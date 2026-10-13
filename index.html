@@ -43,9 +43,11 @@ var page="ronezy12.github.io/contact/?s=1";
 var intent='intent:#Intent;action=android.intent.action.INSERT;type=vnd.android.cursor.dir/raw_contact;S.name=ENTREPRISE%20AR;S.company=ENTREPRISE%20AR;S.job_title=%C3%89lectricien%20%E2%80%93%20Num%C3%A9ro%20d%27urgence;S.phone=%2B33974365217;i.phone_type=3;S.email=contact%40entreprise-ar.fr;i.email_type=2;S.notes=Remise%20en%20conformit%C3%A9%20du%20tableau%0APrise%20Green%27up%20et%20borne%20de%20recharge%0AR%C3%A9novation%20%C3%A9lectrique;end';
 if(ios){
   save.removeAttribute("download");
-  if(inapp&&q.indexOf("s=1")<0){
+  if(q.indexOf("s=1")<0){
     var out="x-safari-https://"+page;
-    ext.href=out; ext.hidden=false; hint.hidden=false; save.hidden=true;
+    ext.href=out; ext.textContent="Ouvrir dans Safari"; ext.hidden=false; save.hidden=true;
+    hint.innerHTML="Pour enregistrer le contact, touchez le bouton ci-dessous.<br>Si rien ne se passe : touchez les <b>trois points</b> en haut, puis <b>Ouvrir dans Safari</b>.";
+    hint.hidden=false;
     location.href=out;
   } else { location.href="ENTREPRISE_AR.vcf"; }
 } else if(android){
