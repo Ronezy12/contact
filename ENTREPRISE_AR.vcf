@@ -3,11 +3,11 @@ VERSION:3.0
 N:;ENTREPRISE AR;;;
 FN:ENTREPRISE AR
 ORG:ENTREPRISE AR
-TITLE:Électricien – Numéro d'urgence
+TITLE;CHARSET=UTF-8:Électricien – Numéro d'urgence
 TEL;TYPE=WORK,VOICE:+33 9 74 36 52 17
 EMAIL;TYPE=INTERNET,WORK:contact@entreprise-ar.fr
 URL:https://www.entreprise-ar.fr/index.html
-NOTE:Remise en conformité du tableau\nPrise Green'up et borne de recharge\nRénovation électrique
+NOTE;CHARSET=UTF-8:Remise en conformité du tableau\nPrise Green'up et borne de recharge\nRénovation électrique
 PHOTO;ENCODING=b;TYPE=JPEG:/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQF
  BQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2w
  BDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e
