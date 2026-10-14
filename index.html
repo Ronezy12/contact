@@ -1,8 +1,26 @@
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>ENTREPRISE AR – Électricien</title>
+<title>ENTREPRISE AR – Enregistrez notre numéro</title>
 <meta name="description" content="Enregistrez le numéro d'ENTREPRISE AR, électricien : remise en conformité du tableau, prise Green'up et borne de recharge, rénovation électrique.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#003d91">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ENTREPRISE AR">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://ronezy12.github.io/contact/">
+<meta property="og:title" content="ENTREPRISE AR – Enregistrez notre numéro d'urgence">
+<meta property="og:description" content="Électricien · 09 74 36 52 17. Touchez le lien, validez la fiche contact, c'est fait.">
+<meta property="og:image" content="https://ronezy12.github.io/contact/apercu.jpg?v=1">
+<meta property="og:image:secure_url" content="https://ronezy12.github.io/contact/apercu.jpg?v=1">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ENTREPRISE AR, électricien : gardez notre numéro en 3 étapes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ronezy12.github.io/contact/apercu.jpg?v=1">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -43,6 +61,8 @@ h1{margin:0;font:700 1.55rem/1.25 var(--titre);color:var(--bleu);text-wrap:balan
 .bleu{background:var(--bleu);color:#fff} .bleu:hover{background:var(--bleu-f)}
 .jaune{background:var(--jaune);color:#2a2000} .jaune:hover{background:#e5a900}
 .contour{background:#fff;color:var(--bleu);border:2px solid var(--bleu)} .contour:hover{background:#eef3fb}
+.guide{background:#eef3fb;border-radius:10px;padding:10px 12px;color:var(--encre)!important}
+.guide b{color:var(--bleu)}
 .merci{margin:0 0 10px;font-weight:600;color:#1f8a4c;font-size:.92rem}
 .qr{display:flex;gap:18px;align-items:center;background:var(--fond);border-radius:18px;padding:16px}
 .qr img{width:120px;height:120px;border-radius:10px;background:#fff;padding:6px;flex:none}
@@ -124,6 +144,7 @@ h1{margin:0;font:700 1.55rem/1.25 var(--titre);color:var(--bleu);text-wrap:balan
 <div class="aide" id="aide" hidden></div>
 <div class="etape active" id="e1"><div class="num">1</div><div class="corps">
 <h2>Enregistrez notre contact</h2><p>Nom, numéro, e-mail et prestations : tout est déjà rempli.</p>
+<p class="guide" id="guide" hidden></p>
 <a class="btn bleu" id="save" href="ENTREPRISE_AR.vcf"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/><path d="M19 3v6M16 6h6"/></svg>Enregistrer le contact</a>
 </div></div>
 <div class="etape" id="e2"><div class="num">2</div><div class="corps">
@@ -143,6 +164,9 @@ var inapp=/WhatsApp|FBAN|FBAV|FB_IAB|Instagram|Messenger/i.test(ua)||(android&&/
 var save=document.getElementById("save"), aide=document.getElementById("aide");
 var page="ronezy12.github.io/contact/?s=1";
 var AVIS="https://www.entreprise-ar.fr/avis-client.html#deposer";
+var guide=document.getElementById("guide");
+if(ios){guide.innerHTML="<b>Sur iPhone :</b> faites défiler la fiche, touchez <b>Nouveau contact</b>, puis la coche <b>✓</b> en haut à droite.";guide.hidden=false;}
+if(android){guide.innerHTML="<b>Sur Android :</b> vérifiez la fiche puis touchez <b>Enregistrer</b>.";guide.hidden=false;}
 var intent='intent:#Intent;action=android.intent.action.INSERT;type=vnd.android.cursor.dir/raw_contact;S.name=ENTREPRISE%20AR;S.company=ENTREPRISE%20AR;S.job_title=%C3%89lectricien%20%E2%80%93%20Num%C3%A9ro%20d%27urgence;S.phone=%2B33974365217;i.phone_type=3;S.email=contact%40entreprise-ar.fr;i.email_type=2;S.notes=Remise%20en%20conformit%C3%A9%20du%20tableau%0APrise%20Green%27up%20et%20borne%20de%20recharge%0AR%C3%A9novation%20%C3%A9lectrique;end';
 function get(k){try{return sessionStorage.getItem(k)}catch(e){return null}}
 function put(k,v){try{sessionStorage.setItem(k,v)}catch(e){}}
